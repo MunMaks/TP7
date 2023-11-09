@@ -34,6 +34,7 @@ void saisiePoint(Point * p){
  * @return int 
  */
 int construireDroite(Point a, Point b, Droite *d){
+    // ax + by + c = 0
     // y = ax + b 
     // b = y - ax
     if (!(b.x - a.x)) { printf("Division par zéro! \n"); return 0; }
