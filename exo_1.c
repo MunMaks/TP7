@@ -11,8 +11,8 @@ typedef struct point{
 }Point;
 
 typedef struct droite{
-    double a;
-    double b;
+    Point a;
+    Point b;
 }Droite;
 
 /**
@@ -45,7 +45,7 @@ int construireDroite(Point a, Point b, Droite *d){
 }
 
 
-void dessineDroite(Droite d){
+void dessineSegment(Droite d){
     /*
     * void MLV_draw_line(
     *    int       x1,       Coordonnée en X de la première extrémité de la ligne
@@ -65,9 +65,12 @@ void dessineDroite(Droite d){
 int main( int argc, char *argv[] ){
 
     MLV_create_window( "Exo - 1 - Point", "Point", LARGEUR, HAUTEUR );
-    Point a;
-    Point b;
+    Point first;
+    Point second;
     Droite d;
+    d.a = first;
+    d.b = second;
+    
     saisiePoint(&a);
     MLV_update_window();
     saisiePoint(&b);
@@ -75,7 +78,7 @@ int main( int argc, char *argv[] ){
     printf("res : %d", res);
     MLV_update_window();
 
-    dessineDroite(d);
+    dessineSegment(d);
 	//
 	// Attend 5 secondes avant la fin du programme.
 	//
